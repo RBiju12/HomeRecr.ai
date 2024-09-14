@@ -9,16 +9,18 @@ def index():
     return {'Welcome': 'to HomeRec.AI'}
 
 class Home(BaseModel):
-    id: int 
+    home_id: int 
     address: str
     city: str
     state: str
-    area: str #square footage 
+    zip: int
+    area: int # sq foot 
     bedrooms: int 
     bathrooms: float
     price: float 
     future_price: float
     num_schools: int 
+    num_parks: int
     crime: float #percentage 
 
 
@@ -34,16 +36,22 @@ async def getHomes(
     address: Optional[str] = None,
     city: Optional[str] = None,
     state: Optional[str] = None,
+    zip: Optional[int] = None,
+    min_area: Optional[int] = None,
+    max_area: Optional[int] = None,
     min_price: Optional[float] = None,
     max_price: Optional[float] = None,
     bedrooms: Optional[int] = None,
     bathrooms: Optional[float] = None): 
     
     filters = {
-        "id": home_id,
+        "home_id": home_id,
         "address": lambda home: address.lower() in home["address"].lower() if address else True,
         "city": lambda home: home["city"].lower() == city.lower() if city else True,
         "state": lambda home: home["state"].lower() == state.lower() if state else True,
+        "zip": lambda home: home["zip"] == zip if zip else True, 
+        "min_area": lambda home: home["area"] >= min_area if min_area else True, 
+        "max_area": lambda home: home["area"] <= max_area if max_area else True, 
         "min_price": lambda home: home["price"] >= min_price if min_price else True,
         "max_price": lambda home: home["price"] <= max_price if max_price else True,
         "bedrooms": lambda home: home["bedrooms"] >= bedrooms if bedrooms else True,
