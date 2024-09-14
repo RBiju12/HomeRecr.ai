@@ -1,6 +1,6 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel
-from typing import Optional, List, Depends
+from typing import Optional, List
 from fastapi.middleware.cors import CORSMiddleware
 from propelauth_fastapi import init_auth, User
 import os

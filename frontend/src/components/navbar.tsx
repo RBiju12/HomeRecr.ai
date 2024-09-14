@@ -5,35 +5,24 @@ import Dashboard from '../pages/dashboard'
 import Search from '../pages/Search'
 
 
-export function Links()
-{
-    return (
-        <div className='flex flex-col space-y-6'>        
-            <Link to="/">Home</Link>
-
-            <Link to="/search">Search</Link>
-
-            <Link to={`/dashboard/:${user?.email}`}>{user?.email.toUpperCase()} Dashboard</Link>
-        </div>
-    )
-}
-
-
-export default function Navbar()
+export default function Navbar({email}: any)
 {
     return (
     <>
-        <Links />
+        <Link to="/">Home</Link>
+
+        <Link to="/search">Search</Link>
+
+        <Link to={`/dashboard/${email}`}>{email + ` Dashboard`}</Link>
+
         <div>
             <Routes>
                 <Route path='/' element={<Home/>} />
                 <Route path='/search' element={<Search />} />
-                <Route path={`/dashboard/:${user?.email}`} element={<Dashboard name={user?.email}/>} />
+                <Route path={`/dashboard/${email}`} element={<Dashboard name={email}/>} />
             </Routes>
         </div>
     </>
 
     )
-
-
 }

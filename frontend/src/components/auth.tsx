@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {withAuthInfo} from "@propelauth/react";
 import Loading from "./loading";
+import Navbar from './navbar'
 
 const fetchFromApi = async (accessToken: string | null) => {
     const response = await fetch("http://localhost:8000/api/auth", {
@@ -12,7 +13,7 @@ const fetchFromApi = async (accessToken: string | null) => {
     if (response.ok) {
         return response.json();
     } else {
-        return {status: response.status};
+        throw new Error("Not Valid");
     }
 }
 
@@ -20,11 +21,15 @@ export default withAuthInfo(function Auth({accessToken}) {
     const [response, setResponse] = useState<any>(null);
 
     useEffect(() => {
-        fetchFromApi(accessToken).then((data) => setResponse(data));
+        fetchFromApi(accessToken).then((data) => setResponse(data)).catch((err: any) => console.log(err));
     }, [])
 
     if (response) {
-        return <h1>{JSON.stringify(response, null, 2)}</h1>
+        const res: any = JSON.stringify(response)
+        const obj: any = JSON.parse(res)
+        const email = obj["Hello"]
+        
+        return <Navbar email={email} />
     } else {
         return <Loading />
     }
