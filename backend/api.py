@@ -1,6 +1,6 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel
-from typing import Optional, List, Depends
+from typing import Optional, List
 from fastapi.middleware.cors import CORSMiddleware
 from propelauth_fastapi import init_auth, User
 import os
@@ -28,7 +28,7 @@ propel_auth_key = os.getenv("PROPELAUTH_KEY")
 
 auth = init_auth(auth_url=propel_url, api_key=propel_auth_key)
 
-@app.get('/')
+@app.get('/api')
 def index():
     return {'Welcome': 'to HomeRec.AI'}
 
@@ -50,12 +50,12 @@ class Home(BaseModel):
 
 
 """ Home investment recommendations based on user parameters"""
-@app.get("/recomendations")
+@app.get("/api/recomendations")
 async def getRec(home_val: int): 
     pass 
 
 """ search function for specific homes"""
-@app.get("/search", response_model=List[Home])
+@app.get("/api/search", response_model=List[Home])
 async def getHomes(    
     home_id: Optional[int] = None,
     address: Optional[str] = None,
@@ -90,17 +90,8 @@ async def getHomes(
     
     return results 
 
-@app.get("/homes/{home_id}")
-def getHome():
-    pass
-
-
-client = MongoClient("mongodb://localhost:8000")
-db = client["home_database"]
-users = db["users"]
-
-
-@app.get("/{user_id}/dashboard")
+""" dashboard of pinned homes """
+@app.get("/api/pinned-homes/{user}")
 def get_pinned_homes(user_id: int):
     """ dashboard of pinned homes """
     pass 

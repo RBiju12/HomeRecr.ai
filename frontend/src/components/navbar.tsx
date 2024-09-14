@@ -1,39 +1,15 @@
-import {Link} from 'react-router-dom'
-import Home from '../pages/home'
-import {Route, Routes} from 'react-router-dom'
-import Dashboard from '../pages/dashboard'
-import Search from '../pages/Search'
+import { Link } from 'react-router-dom';
 
-
-export function Links()
-{
-    return (
-        <div className='flex flex-col space-y-6'>        
-            <Link to="/">Home</Link>
-
-            <Link to="/search">Search</Link>
-
-            <Link to={`/dashboard/:${user?.email}`}>{user?.email.toUpperCase()} Dashboard</Link>
-        </div>
-    )
-}
-
-
-export default function Navbar()
-{
-    return (
+export default function Navbar({ email }: { email: string; }) {
+  return (
     <>
-        <Links />
-        <div>
-            <Routes>
-                <Route path='/' element={<Home/>} />
-                <Route path='/search' element={<Search />} />
-                <Route path={`/dashboard/:${user?.email}`} element={<Dashboard name={user?.email}/>} />
-            </Routes>
-        </div>
+      <nav className='px-10 py-3 flex flex-row space-x-5 items-center justify-center h-10 text-gray-200 font-bold text-3xl'>
+        <Link to="/" className='duration-300 hover:text-green-300'>Home</Link>
+
+        <Link to="/search" className='duration-300 hover:text-green-300'>Search</Link>
+
+        <Link to={`/dashboard`} className='duration-300 hover:text-green-300'>{email + ` - Dashboard`}</Link>
+      </nav>
     </>
-
-    )
-
-
+  );
 }
