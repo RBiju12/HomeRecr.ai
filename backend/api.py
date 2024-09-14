@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from propelauth_fastapi import init_auth, User
 import os
 from dotenv import load_dotenv
+from pymongo import MongoClient
 
 app = FastAPI()
 
@@ -40,11 +41,12 @@ class Home(BaseModel):
     area: int # sq foot 
     bedrooms: int 
     bathrooms: float
-    price: float 
-    future_price: float
+    current_price: float 
+    interest_rates: float 
     num_schools: int 
     num_parks: int
-    crime: float #percentage 
+    num_restuarants: int
+    
 
 
 """ Home investment recommendations based on user parameters"""
@@ -88,24 +90,70 @@ async def getHomes(
     
     return results 
 
-""" dashboard of pinned homes """
-@app.get("/pinned-homes/{user}")
+@app.get("/homes/{home_id}")
+def getHome():
+    pass
+
+
+client = MongoClient("mongodb://localhost:8000")
+db = client["home_database"]
+users = db["users"]
+
+
+@app.get("/{user_id}/dashboard")
 def get_pinned_homes(user_id: int):
+    """ dashboard of pinned homes """
     pass 
 
-""" pinning homes """
-@app.post("/pin")
-def pin_home(home_id: int, user_id: int):
-    pass 
 
-""" unpinning homes """
-@app.delete("/unpin")
-def unpin_home(home_id: int, user_id: int):
-    pass 
+@app.post("/{user_id}/search/pin/")
+async def pin_home(home_id: int, user_id: int):
+    """ adds home_id to array of ints (representing home_id) associated with a user document in mongoDB """
 
-""" POTENTIAL GOOGLE MAPS IMPLEMENTATION for proximity to x location"""
+    user = await users.find_one({"user_id": user_id})
+
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    if home_id in user.get("pinned_homes", []):
+        raise HTTPException(status_code=400, detail="Home already pinned")
+
+    result = await users.update_one(
+        {"user_id": user_id},
+        {"$addToSet": {"pinned_homes": home_id}}
+    )
+
+    if result.modified_count == 0:
+        raise HTTPException(status_code=500, detail="Home could not be pinned or Home doesn't exist.")
+
+    return {"result": "Home pinned"}
+
+@app.delete("/{user_id}/search/unpin/")
+async def unpin_home(home_id: int, user_id: int):
+    """ deletes home_id from array of home ids in a user document"""
+
+    user = await users.find_one({"user_id": user_id})
+
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    if home_id not in user.get("pinned_homes", []):
+        raise HTTPException(status_code=404, detail="Home not pinned")
+    
+    result = await users.update_one(
+        {"user_id": user_id},
+        {"$pull": {"pinned_homes": home_id}}
+    )
+    if result.modified_count == 0:
+        raise HTTPException(status_code=500, detail="Home could not be unpinned or Home doesn't exist.")
+
+    return {"result": "Home unpinned"}
+
+    
+
 @app.get("/proximity")
 def get_distance(home_id: int, x: str):
+    """ POTENTIAL GOOGLE MAPS IMPLEMENTATION for proximity to x location"""
     pass
 
 @app.get("/api/auth")
