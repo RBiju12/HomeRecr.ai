@@ -1,28 +1,15 @@
-import {Link} from 'react-router-dom'
-import Home from '../pages/home'
-import {Route, Routes} from 'react-router-dom'
-import Dashboard from '../pages/dashboard'
-import Search from '../pages/Search'
+import { Link } from 'react-router-dom';
 
-
-export default function Navbar({email}: any)
-{
-    return (
+export default function Navbar({ email }: { email: string; }) {
+  return (
     <>
-        <Link to="/">Home</Link>
+      <nav className='px-10 py-3 flex flex-row space-x-5 items-center justify-center h-10 text-gray-200 font-bold text-3xl'>
+        <Link to="/" className='duration-300 hover:text-green-300'>Home</Link>
 
-        <Link to="/search">Search</Link>
+        <Link to="/search" className='duration-300 hover:text-green-300'>Search</Link>
 
-        <Link to={`/dashboard/${email}`}>{email + ` Dashboard`}</Link>
-
-        <div>
-            <Routes>
-                <Route path='/' element={<Home/>} />
-                <Route path='/search' element={<Search />} />
-                <Route path={`/dashboard/${email}`} element={<Dashboard name={email}/>} />
-            </Routes>
-        </div>
+        <Link to={`/dashboard`} className='duration-300 hover:text-green-300'>{email + ` - Dashboard`}</Link>
+      </nav>
     </>
-
-    )
+  );
 }

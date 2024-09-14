@@ -26,3 +26,4 @@ dist-ssr
 # api keys 
 *.env
 *.venv
+backend/__pycache__/api.cpython-312.pyc
