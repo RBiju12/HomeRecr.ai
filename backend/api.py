@@ -32,7 +32,7 @@ def index():
 
 @app.get("/api/auth")
 def read_user(user: User = Depends(auth.require_user)):
-    return {"Welcome": user.username}
+    return {"Hello": user.email}
 
 
 if __name__ == '__main__':
