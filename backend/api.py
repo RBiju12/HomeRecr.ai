@@ -5,9 +5,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from propelauth_fastapi import init_auth, User
 import os
 from dotenv import load_dotenv
-import spacy
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+import spacy
+
 
 app = FastAPI()
 
@@ -37,7 +38,6 @@ users = db["users"]
 
 allHomes = homes.aggregate([])
 
-print(allHomes.next())
 
 origins = [
     '*'
@@ -73,12 +73,12 @@ class Home(BaseModel):
     num_restuarants: int
 
 @app.get('/')
-def index():
+async def index():
     return {'Welcome': 'to HomeRec.AI'}
     
 # AUTHENTICATION METHOD WITH PROPELAUTH 
 @app.get("/auth")
-def read_user(user: User = Depends(auth.require_user)):
+async def read_user(user: User = Depends(auth.require_user)):
     return {"Hello": user.email}
 
 # 
@@ -125,7 +125,7 @@ async def getHomes(
 
 # DASHBOARD METHODS 
 @app.get("/dashboard/")
-def get_pinned_homes(user_id: int):
+async def get_pinned_homes(user_id: int):
     """ dashboard of pinned homes """
     pass 
 
@@ -176,7 +176,7 @@ async def unpin_home(home_id: int, user_id: int):
     
 # GOOGLE MAPS IMPLEMENTATION 
 @app.get("/proximity")
-def get_distance(home_id: int, x: str):
+async def get_distance(home_id: int, x: str):
     """ POTENTIAL GOOGLE MAPS IMPLEMENTATION for proximity to x location"""
     pass
 
