@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import HouseCard from '../components/HouseCard.tsx';
+import {Button} from "@nextui-org/button";
+
 
 export default function Search() {
 
@@ -15,7 +17,7 @@ export default function Search() {
         <h1 className="text-4xl font-bold text-center mt-8">Search</h1>
         <div className="flex justify-center mt-8">
           <input type="text" className="border-2 border-gray-300 p-2" placeholder="Search" />
-          <button className="bg-blue-500 text-white p-2 ml-2">Search</button>
+          <Button color='primary' className="bg-blue-500 text-white p-2 ml-2 h-30 w-20">Search</Button>
         </div>
         <div className='grid grid-cols-3 gap-5 py-5'>
           {houses.map((house) => {
