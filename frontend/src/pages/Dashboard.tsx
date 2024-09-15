@@ -7,21 +7,6 @@ const Dashboard = withAuthInfo(function Dashboard({ user }) {
 
   const [houses, setHouses] = useState<HomeDocument[]>([]);
 
-  const house: HomeDocument = {
-    id: 1,
-    address: '123 Main St',
-    city: 'Springfield',
-    state: 'IL',
-    zip: '62701',
-    area: 1200,
-    Bedrooms: 3,
-    Bathrooms: 2,
-    price: 150000,
-    Price: 150000,
-    Num_Schools: 3,
-    pins: 4,
-  };
-
   useEffect(() => {
     fetch(`/users/${user!.userId}`).then((res) => res.json()).then((data) => setHouses(data.houses));
     console.log(houses);

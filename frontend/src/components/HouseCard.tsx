@@ -22,9 +22,10 @@ export default function HouseCard({ house, pinnedByUser }: Props) {
   }, [pinned]);
 
   return (
-    <div className='flex flex-col bg-emerald-900 rounded-lg shadow-lg p-4 text-gray-200 relative'>
+    <div className='flex flex-col bg-emerald-900 rounded-lg shadow-lg p-4 text-gray-200 relative duration-300 hover:scale-105'>
       <h2 className='text-2xl'>{house.address}</h2>
-      <p className='text-lg'>${house.price.toLocaleString("en")}</p>
+      <p className='text-lg'>${parseInt(house.price).toLocaleString("en")}</p>
+      <p className='text-md'>{house.nextYearPercent}% increase by next year</p>
       <div className='flex text-left mt-4'>
         <div>
           <div className='flex flex-row items-center space-x-2'><Icon icon={'fa:bed'} /><p className='text-lg'>Bedrooms: {house.bedrooms}</p></div>
