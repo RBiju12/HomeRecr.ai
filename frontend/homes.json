@@ -1,0 +1,751 @@
+[
+ {
+   "id": 1,
+   "house": {
+   "address": "127 Lucas Dr",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "832",
+   "bedrooms": 2,
+   "bathrooms": 1,
+   "price": "246,500",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 2,
+   "house": {
+   "address": "915 Buchanan Dr",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "1,973",
+   "bedrooms": 3,
+   "bathrooms": 2,
+   "price": "$365,000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 3,
+   "house": {
+   "address": "307 Heartwood Xing",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "2,045",
+   "bedrooms": 4,
+   "bathrooms": 3,
+   "price": "$480,000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 4,
+   "house": {
+   "address": "810 Ellett Rd",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "1549",
+   "bedrooms": 3,
+   "bathrooms": 2,
+   "price": "$399,000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 5,
+   "house": {
+   "address": "1107 Horseshoe Ln",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "2317",
+   "bedrooms": 3,
+   "bathrooms": 3,
+   "price": "$420,000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 6,
+   "house": {
+   "address": "2511 Cherry Ln",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "2010",
+   "bedrooms": 3,
+   "bathrooms": 3,
+   "price": "$559,000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 7,
+   "house": {
+   "address": "1583 Smithfield Dr",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "1116",
+   "bedrooms": 4,
+   "bathrooms": 3,
+   "price": "$495,000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 8,
+   "house": {
+   "address": "1808 Gardenspring Dr",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "1779",
+   "bedrooms": 4,
+   "bathrooms": 2,
+   "price": "$459,000",
+   "num_schools": 3
+   }
+ },
+ {
+   "id": 9,
+   "house": {
+   "address": "235 Craig Dr",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "2562",
+   "bedrooms": 4,
+   "bathrooms": 3,
+   "price": "$409,900",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 10,
+   "house": {
+   "address": "304 Layman Ct",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "3315",
+   "bedrooms": 4,
+   "bathrooms": 3.5,
+   "price": "630000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 11,
+   "house": {
+   "address": "3111 Alice Dr",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "3660",
+   "bedrooms": 4,
+   "bathrooms": 3.5,
+   "price": "899000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 12,
+   "house": {
+   "address": "613 Leisure Ln",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "5781",
+   "bedrooms": 8,
+   "bathrooms": 5,
+   "price": "695000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 13,
+   "house": {
+   "address": "1325 Nellies Cave Rd",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "4735",
+   "bedrooms": 5,
+   "bathrooms": 4.5,
+   "price": "995000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 14,
+   "house": {
+   "address": "330 Sheliah Ct",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "2,502",
+   "bedrooms": 3,
+   "bathrooms": 3.5,
+   "price": "550000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 15,
+   "house": {
+   "address": "308 Grandview Dr",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "1828",
+   "bedrooms": 3,
+   "bathrooms": 2,
+   "price": "400000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 16,
+   "house": {
+   "address": "602 Floyd St",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "5369",
+   "bedrooms": 5,
+   "bathrooms": 3.5,
+   "price": "925000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 17,
+   "house": {
+   "address": "4074 Pearman Rd",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "6331",
+   "bedrooms": 4,
+   "bathrooms": 3.5,
+   "price": "820000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 18,
+   "house": {
+   "address": "4090 Roanoke St",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "2300",
+   "bedrooms": 5,
+   "bathrooms": 3,
+   "price": "314900",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 19,
+   "house": {
+   "address": "3810 Divine Dr",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "3631",
+   "bedrooms": 3,
+   "bathrooms": 4,
+   "price": "595900",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 20,
+   "house": {
+   "address": "180 Brilliant Dr",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "2448",
+   "bedrooms": 3,
+   "bathrooms": 2.5,
+   "price": "545000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 21,
+   "house": {
+   "address": "510 Dewdrop Ln",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "3453",
+   "bedrooms": 5,
+   "bathrooms": 4,
+   "price": "550000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 22,
+   "house": {
+   "address": "710 Ellett Rd",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 23073,
+   "area": "1036",
+   "bedrooms": 2,
+   "bathrooms": 1,
+   "price": "199900",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 23,
+   "house": {
+   "address": "921 Crosscreek Dr",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "2853",
+   "bedrooms": 4,
+   "bathrooms": 3.5,
+   "price": "449500",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 24,
+   "house": {
+   "address": "930 Forest St",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "960",
+   "bedrooms": 2,
+   "bathrooms": 1,
+   "price": "210000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 25,
+   "house": {
+   "address": "2300 Glade Dr",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "2590",
+   "bedrooms": 5,
+   "bathrooms": 3,
+   "price": "390000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 26,
+   "house": {
+   "address": "740 Independence Blvd",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "1846",
+   "bedrooms": 3,
+   "bathrooms": 3,
+   "price": "389500",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 27,
+   "house": {
+   "address": "230 Meadow Dr",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "1666",
+   "bedrooms": 3,
+   "bathrooms": 2.5,
+   "price": "349900",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 28,
+   "house": {
+   "address": "1637 York Dr",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "1296",
+   "bedrooms": 2,
+   "bathrooms": 2.5,
+   "price": "249900",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 29,
+   "house": {
+   "address": "2309 Peppers Ferry Rd",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "1577",
+   "bedrooms": 3,
+   "bathrooms": 2,
+   "price": "233500",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 30,
+   "house": {
+   "address": "205 Robin Hood Dr",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "1912",
+   "bedrooms": 3,
+   "bathrooms": 2.5,
+   "price": "379900",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 31,
+   "house": {
+   "address": "1160 Scott St",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "1188",
+   "bedrooms": 3,
+   "bathrooms": 2.5,
+   "price": "187800",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 32,
+   "house": {
+   "address": "260 Economy St",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "1218",
+   "bedrooms": 3,
+   "bathrooms": 1.5,
+   "price": "235000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 33,
+   "house": {
+   "address": "985 George Edward Via",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "2220",
+   "bedrooms": 3,
+   "bathrooms": 3,
+   "price": "369000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 34,
+   "house": {
+   "address": "2056 Radford Rd",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "2095",
+   "bedrooms": 4,
+   "bathrooms": 2,
+   "price": "350000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 35,
+   "house": {
+   "address": "120 Cedar Bluff Dr",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "4103",
+   "bedrooms": 5,
+   "bathrooms": 4.5,
+   "price": "624900",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 36,
+   "house": {
+   "address": "625 Betty Dr",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "2137",
+   "bedrooms": 3,
+   "bathrooms": 3,
+   "price": "349900",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 37,
+   "house": {
+   "address": "120 Tula Cir",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "1925",
+   "bedrooms": 4,
+   "bathrooms": 3,
+   "price": "349900",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 38,
+   "house": {
+   "address": "780 Oak Tree Blvd",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "1668",
+   "bedrooms": 3,
+   "bathrooms": 2,
+   "price": "317500",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 39,
+   "house": {
+   "address": "1627 Mud Pike",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "1785",
+   "bedrooms": 3,
+   "bathrooms": 2,
+   "price": "259000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 40,
+   "house": {
+   "address": "1265 Chestnut Dr",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "2456",
+   "bedrooms": 4,
+   "bathrooms": 3,
+   "price": "305000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 41,
+   "house": {
+   "address": "1425 Providence Blvd",
+   "city": "Christiansburg",
+   "state": "VA",
+   "zip": 24073,
+   "area": "1970",
+   "bedrooms": 4,
+   "bathrooms": 3,
+   "price": "299000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 42,
+   "house": {
+   "address": "3704 Sunrise Ave NW",
+   "city": "Roanoke",
+   "state": "VA",
+   "zip": 24012,
+   "area": "2174",
+   "bedrooms": 3,
+   "bathrooms": 1.5,
+   "price": "199950",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 43,
+   "house": {
+   "address": "4731 Goodman Rd",
+   "city": "Roanoke",
+   "state": "VA",
+   "zip": 24014,
+   "area": "2429",
+   "bedrooms": 3,
+   "bathrooms": 2.5,
+   "price": "565000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 44,
+   "house": {
+   "address": "5005 Hunting Hills Dr",
+   "city": "Roanoke",
+   "state": "VA",
+   "zip": 24018,
+   "area": "4265",
+   "bedrooms": 3,
+   "bathrooms": 3,
+   "price": "1150000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 45,
+   "house": {
+   "address": "3435 Troxell Rd SE",
+   "city": "Roanoke",
+   "state": "VA",
+   "zip": 24014,
+   "area": "1440",
+   "bedrooms": 3,
+   "bathrooms": 2.5,
+   "price": "215000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 46,
+   "house": {
+   "address": "539 Highland Ave SW",
+   "city": "Roanoke",
+   "state": "VA",
+   "zip": 24016,
+   "area": "2599",
+   "bedrooms": 4,
+   "bathrooms": 2,
+   "price": "429950",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 47,
+   "house": {
+   "address": "2485 Buckshot Ln",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "1782",
+   "bedrooms": 5,
+   "bathrooms": 2,
+   "price": "248800",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 48,
+   "house": {
+   "address": "507 Mabry Ln",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "2451",
+   "bedrooms": 4,
+   "bathrooms": 2.5,
+   "price": "429000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 49,
+   "house": {
+   "address": "1217 Village Way S",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "3831",
+   "bedrooms": 5,
+   "bathrooms": 4,
+   "price": "889000",
+   "num_schools": 3,
+   "pins": 0
+   }
+ },
+ {
+   "id": 50,
+   "house": {
+   "address": "911 Nellies Cave Rd",
+   "city": "Blacksburg",
+   "state": "VA",
+   "zip": 24060,
+   "area": "2216",
+   "bedrooms": 3,
+   "bathrooms": 1.5,
+   "price": "320700",
+   "num_schools": 3,
+   "pins": 0
+   }
+ }
+]
