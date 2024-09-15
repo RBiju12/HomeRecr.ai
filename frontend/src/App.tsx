@@ -10,14 +10,16 @@ import Dashboard from './pages/Dashboard.tsx';
 export default function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="search" element={<Search />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
+      <div className="background">
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="search" element={<Search />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </div>
     </>
   );
 }
