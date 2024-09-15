@@ -1,4 +1,4 @@
-export interface HouseDocument {
+export interface HomeDocument {
   id: number;
   address: string;
   city: string;
@@ -6,7 +6,16 @@ export interface HouseDocument {
   zip: string;
   area: number;
   bedrooms: number;
-  bathrooms: number; price: number;
-  schoolCount: number;
-  pinned: string[];
+  bathrooms: number;
+  price: string;
+  Price: number;
+  num_schools: number;
+  pins: number;
+  nextYearPercent: number;
+}
+
+export interface UserDocument {
+  userId: number;
+  email: string;
+  pinnedHomes: number[];
 }
