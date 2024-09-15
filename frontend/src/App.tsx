@@ -14,6 +14,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="home" element={<Home />} />
             <Route path="search" element={<Search />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="*" element={<NoPage />} />
