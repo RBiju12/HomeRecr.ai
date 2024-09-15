@@ -7,32 +7,48 @@ import homes from '../homes.json';
 export default function Search() {
 
   const [houses, setHouses] = useState<any>([]);
+  const [userData, setuserData] = useState<string>('')
 
   // useEffect(() => {
   //   fetch('/houses').then((res) => res.json()).then((data) => setHouses(data.houses));
   // }, []);
 
-  async function getSearchResults(input: string)
+  async function getSearchResults(input: string): Promise<any>
   {
-     if (!input.includes("/"))
+     if (!input.includes(","))
      {
         throw new Error("Needs comma")
      }
 
-     let inputs = String(input.split(','))
-     let obj = JSON.parse(inputs)
+     let inputs = input.split(',').map((value) => value.trim())
 
-     const response = fetch('http://localhost:8000/api/recommendation', {
+     const [address, zip, area, bedrooms, bathrooms, price] = inputs
+
+     
+     const addresses = address.split(' ')
+
+     const encodedAddress = encodeURIComponent(addresses.join())
+
+     const otherQuery = `&bathrooms=${Number(bathrooms)}&price=${Number(price)}`
+
+     const bedroomAmount = Number(bedrooms)
+
+
+     const response = fetch(`http://localhost:8000/api/recommendation?address=${encodedAddress}&zip=${Number(zip)}&area=${Number(area)}&bedrooms=${bedroomAmount}` + otherQuery
+      , {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
       },
-      body: JSON.stringify(obj)
      });
 
      const data: any = await response;
 
-     setHouses([...houses, data])
+     const jsonData = await data.json();
+
+     const recommendationAddress = jsonData?.address
+
+     setHouses([...houses, recommendationAddress])
   }
 
   let temp: any[] = [];
@@ -44,39 +60,27 @@ export default function Search() {
     temp.push(getHouse);
   }
 
-
+  let data: any[] = homes
+  const filteredData = data.filter((element) => element?.house?.address.split(' ').join('') === houses.join(''))
   return (
-    <>
       <div className="container text-gray-200">
         <h1 className="text-4xl font-bold text-center mt-8">Find the home for you</h1>
         <div className="flex justify-center mt-8">
-<<<<<<< HEAD
           <div className='ml-10'>
-          <input type="text" className="h-10 border-2 border-gray-300 p-2" placeholder="Search" onChange={(e) => getSearchResults(e.target.value)}/>
-=======
-          <input type="text" className="w-1/2 rounded-md h-10 ring-1 ring-white bg-emerald-900 text-gray-200 border-gray-300 p-2" placeholder="1200 appleapplepie ln, Blacksburg, VA, 2 bedrooms, 2 baths" />
->>>>>>> 9e61c0c9859317712bc452be4d5b115c6085a036
-          <Button color='primary' className="h-10 w-20 bg-blue-500 text-white p-2 ml-2">Search</Button>
+          <input type="text" className="text-black h-10 border-2 border-gray-300 p-2" placeholder="Search" onChange={(e) => setuserData(e.target.value)}/>
+          <Button onClick={(e: any) => getSearchResults(userData)} color='primary' className="h-10 w-20 bg-blue-500 text-white p-2 ml-2">Search</Button>
         </div >
         {houses.length === 0 && <div className=' grid grid-cols-3 gap-8 my-10'>{temp.map((element) => <HouseCard house={element} pinnedByUser={false} />)}</div>}
         < div className='mx-auto grid grid-cols-3 gap-5 py-5' >
           {
-            houses.map((house) => {
-              return <HouseCard house={house} pinnedByUser={true} />;
+            filteredData.length > 0 && filteredData.map((element) => {
+              return <HouseCard house={element?.house} pinnedByUser={true}/>
             })
+            
           }
-<<<<<<< HEAD
         </div>
-        <div className='grid grid-cols-3 gap-5 py-5'>
-          {houses.map((house: any) => {
-            return <HouseCard house={house} pinnedByUser={true}/>;
-          })}
-        </div>
+      
       </div>
-=======
-        </div >
-      </div >
->>>>>>> 9e61c0c9859317712bc452be4d5b115c6085a036
-    </>
+    </div>
   );
 }

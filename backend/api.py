@@ -163,14 +163,7 @@ async def getHomes(
     
     return results 
 
-# #Search Functionality object 
-# class Search(BaseModel):
-#     zip: int
-#     area: str
-#     bedrooms: int
-#     bathrooms: int
-#     price: int
-print(vectors[0][:40])
+
 @app.get('/api/recommendation')
 async def get_recommendation(address: str, zip: int, area: int, bedrooms: int, bathrooms: int, price: int):
     input_features = np.array([zip, area, bedrooms, bathrooms, price])
@@ -182,7 +175,7 @@ async def get_recommendation(address: str, zip: int, area: int, bedrooms: int, b
     vectors.sort(key=lambda x : cosine_simalarity(x[1:], flatten_2))
 
     addresses = {
-        'Address': vectors[-5:][-1][0]
+        'address': vectors[-5:][-1][0]
     }
 
 
