@@ -1,13 +1,14 @@
 import { withAuthInfo } from '@propelauth/react';
 import HouseCard from '../components/HouseCard.tsx';
 import { useEffect, useState } from 'react';
-import { HouseDocument } from '../typings/index.ts';
+import { HomeDocument } from '../typings/index.ts';
 
-export default withAuthInfo(function Dashboard({ isLoggedIn, user }) {
-  const [houses, setHouses] = useState<HouseDocument>([]);
+const Dashboard = withAuthInfo(function Dashboard({ user }) {
+
+  const [houses, setHouses] = useState<HomeDocument[]>([]);
 
   useEffect(() => {
-    fetch(`/api/users/${user?.userId}`).then((res) => res.json()).then((data) => setHouses(data.houses));
+    fetch(`/users/${user?.userId}`).then((res) => res.json()).then((data) => setHouses(data.houses));
     console.log(houses);
   }, [houses]);
 
@@ -27,5 +28,5 @@ export default withAuthInfo(function Dashboard({ isLoggedIn, user }) {
   );
 });
 
-
+export default Dashboard;
 

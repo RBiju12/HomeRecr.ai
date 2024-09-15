@@ -1,28 +1,28 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import HouseCard from '../components/HouseCard.tsx';
 
 export default function Search() {
-  const [query, setQuery] = useState('');
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-    try {
-      const response = await fetch(`/api/search?query=${query}`);
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.error('Error fetching search results:', error);
-    }
-  };
+  const [houses, setHouses] = useState([]);
+
+  useEffect(() => {
+    fetch('/houses').then((res) => res.json()).then((data) => setHouses(data.houses));
+  }, []);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search..."
-      />
-      <button type="submit">Search</button>
-    </form>
+    <>
+      <div className="container mx-auto">
+        <h1 className="text-4xl font-bold text-center mt-8">Search</h1>
+        <div className="flex justify-center mt-8">
+          <input type="text" className="border-2 border-gray-300 p-2" placeholder="Search" />
+          <button className="bg-blue-500 text-white p-2 ml-2">Search</button>
+        </div>
+        <div className='grid grid-cols-3 gap-5 py-5'>
+          {houses.map((house) => {
+            return <HouseCard house={house} />;
+          })}
+        </div>
+      </div>
+    </>
   );
 }

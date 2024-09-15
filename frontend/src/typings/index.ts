@@ -1,4 +1,4 @@
-export interface HouseDocument {
+export interface HomeDocument {
   id: number;
   address: string;
   city: string;

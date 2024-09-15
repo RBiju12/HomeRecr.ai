@@ -4,7 +4,7 @@ import Loading from "./loading";
 import Navbar from './navbar';
 
 const fetchFromApi = async (accessToken: string | null) => {
-  const response = await fetch("http://localhost:8000/api/auth", {
+  const response = await fetch("http://localhost:8000/auth", {
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${accessToken}`
@@ -17,7 +17,7 @@ const fetchFromApi = async (accessToken: string | null) => {
   }
 };
 
-export default withAuthInfo(function Auth({ accessToken }) {
+export const Authentication = withAuthInfo(function Auth({ accessToken }) {
   const [response, setResponse] = useState<any>(null);
 
   useEffect(() => {
@@ -34,3 +34,6 @@ export default withAuthInfo(function Auth({ accessToken }) {
     return <Loading />;
   }
 });
+
+
+export default Authentication;
