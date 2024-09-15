@@ -7,10 +7,14 @@ import os
 from dotenv import load_dotenv
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+from recommendation import cosine_simalarity
+import json
+import numpy as np
 import spacy
 
-
 app = FastAPI()
+
+nlp = spacy.load("en_core_web_md")
 
 load_dotenv(dotenv_path="./keys.env")
 
@@ -56,6 +60,32 @@ propel_auth_key = os.getenv("PROPELAUTH_KEY")
 
 auth = init_auth(auth_url=propel_url, api_key=propel_auth_key)
 
+vectors = []
+
+data = None
+with open("./homes.json", 'r') as file:
+    data = json.load(file)
+
+
+
+for key in data:
+    bbZip, bbArea, bbBedrooms, bbBathrooms, bbPrice = key["house"]["zip"], key["house"]["area"], key["house"]["bedrooms"], key["house"]["bathrooms"], key["house"]["price"]
+    bbAddress = key["house"]["address"]
+
+    numeric_features = np.array([bbZip, bbArea, bbBedrooms, bbBathrooms, bbPrice])
+
+    text_vector = nlp(bbAddress).vector
+    
+    flatten_arr = np.concatenate([numeric_features, text_vector])
+
+    vectors.append((bbAddress, flatten_arr.tolist()))
+
+
+# address, zipCode, area, bedrooms, bathrooms, price = obj.values()
+# searchVector = getVector(zipCode=zipCode, area=area, bedrooms=bedrooms, bathrooms=bathrooms, price=price, address=address)
+
+
+
 # home objects
 class Home(BaseModel):
     home_id: int 
@@ -71,6 +101,16 @@ class Home(BaseModel):
     num_schools: int 
     num_parks: int
     num_restuarants: int
+
+#Search Functionality object 
+class Search(BaseModel):
+    zip: int
+    area: str
+    bedrooms: int
+    bathrooms: int
+    price: int
+
+
 
 @app.get('/')
 async def index():
@@ -122,6 +162,32 @@ async def getHomes(
         raise HTTPException(status_code=404, detail="No homes with the search parameters could be found.")
     
     return results 
+
+# #Search Functionality object 
+# class Search(BaseModel):
+#     zip: int
+#     area: str
+#     bedrooms: int
+#     bathrooms: int
+#     price: int
+print(vectors[0][:40])
+@app.get('/api/recommendation')
+async def get_recommendation(address: str, zip: int, area: int, bedrooms: int, bathrooms: int, price: int):
+    input_features = np.array([zip, area, bedrooms, bathrooms, price])
+
+    address_vector = nlp(address).vector
+    
+    flatten_2 = np.concatenate([input_features, address_vector])
+    
+    vectors.sort(key=lambda x : cosine_simalarity(x[1:], flatten_2))
+
+    addresses = {
+        'Address': vectors[-5:][-1][0]
+    }
+
+
+    return addresses
+    
 
 # DASHBOARD METHODS 
 @app.get("/dashboard/")
