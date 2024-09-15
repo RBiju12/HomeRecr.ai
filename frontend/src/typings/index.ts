@@ -5,10 +5,11 @@ export interface HomeDocument {
   state: string;
   zip: string;
   area: number;
-  Bedrooms: number;
-  Bathrooms: number; price: number;
+  bedrooms: number;
+  bathrooms: number; 
+  price: number;
   Price: number;
-  Num_Schools: number;
+  num_schools: number;
   pins: number;
 }
 

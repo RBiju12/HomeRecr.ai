@@ -30,12 +30,12 @@ export default function Search() {
           <input type="text" className="h-10 border-2 border-gray-300 p-2" placeholder="Search" />
           <Button color='primary' className="h-10 w-20 bg-blue-500 text-white p-2 ml-2">Search</Button>
           </div>
-          {houses.length === 0 && <div className='absolute mt-40 mr-20 flex flex-col space-y-5 pb-20'>{temp.map((element) => <HouseCard house={element} />)}</div>
+          {houses.length === 0 && <div className='absolute mt-40 mr-20 flex flex-col space-y-5 pb-20'>{temp.map((element) => <HouseCard house={element} pinnedByUser={true} />)}</div>
           }
         </div>
         <div className='grid grid-cols-3 gap-5 py-5'>
           {houses.map((house) => {
-            return <HouseCard house={house} />;
+            return <HouseCard house={house} pinnedByUser={true}/>;
           })}
         </div>
       </div>

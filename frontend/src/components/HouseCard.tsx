@@ -27,8 +27,8 @@ export default function HouseCard({ house, pinnedByUser }: Props) {
       <p className='text-lg'>${house.price.toLocaleString("en")}</p>
       <div className='flex text-left mt-4'>
         <div>
-          <div className='flex flex-row items-center space-x-2'><Icon icon={'fa:bed'} /><p className='text-lg'>Bedrooms: {house.Bedrooms}</p></div>
-          <div className='flex flex-row items-center space-x-2'><Icon icon={'fa:bath'} /><p className='text-lg'>Bathrooms: {house.Bathrooms}</p></div>
+          <div className='flex flex-row items-center space-x-2'><Icon icon={'fa:bed'} /><p className='text-lg'>Bedrooms: {house.bedrooms}</p></div>
+          <div className='flex flex-row items-center space-x-2'><Icon icon={'fa:bath'} /><p className='text-lg'>Bathrooms: {house.bathrooms}</p></div>
           <div className='flex flex-row items-center space-x-2'><Icon icon={'tdesign:measurement-1'} /><p className='text-lg'>Floor Area: {house.area} sq ft</p></div>
         </div>
         <div className='absolute top-1 right-2 text-2xl flex flex-row items-center justify-center space-x-2'>
