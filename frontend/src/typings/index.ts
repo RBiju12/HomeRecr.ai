@@ -5,8 +5,15 @@ export interface HomeDocument {
   state: string;
   zip: string;
   area: number;
-  bedrooms: number;
-  bathrooms: number; price: number;
-  schoolCount: number;
-  pinned: string[];
+  Bedrooms: number;
+  Bathrooms: number; price: number;
+  Price: number;
+  Num_Schools: number;
+  pins: number;
+}
+
+export interface UserDocument {
+  userId: number;
+  email: string;
+  pinnedHomes: number[];
 }
